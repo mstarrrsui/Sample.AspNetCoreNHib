@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+
+  <session-factory>
+
+    <property name="dialect">NHibernate.Dialect.MsSql2012Dialect</property>
+    <property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
+    <property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
+    <property name="command_timeout">120</property>
+    <property name="max_fetch_depth">3</property>
+    <property name="default_batch_fetch_size">10</property>
+    <property name="adonet.batch_size">10</property>
+    <property name="cache.provider_class">NHibernate.Caches.SysCache.SysCacheProvider, NHibernate.Caches.SysCache</property>
+    <property name="cache.region_prefix">RSUI</property>
+    <property name="cache.use_query_cache">true</property>
+    <property name="generate_statistics">true</property>
+    <property name="current_session_context_class">RSUI.Common.Web.LazyWebSessionContext, RSUI.Common</property>
+
+
+    <property name="default_schema">dbo</property>
+    <property name="show_sql">false</property>
+
+    <mapping assembly="RSUI.Common" />
+    <!--<mapping assembly="RSUI.Claims.Data" />-->
+
+    
+ </session-factory>
+
+</hibernate-configuration>
